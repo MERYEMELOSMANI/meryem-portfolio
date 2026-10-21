@@ -1,0 +1,381 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0a0a0a;
+  font-family: "Old Standard TT", serif;
+}
+
+/* The wrapper just holds the space */
+.id-card {
+  position: relative;
+  width: 780px;
+  height: 450px; 
+  background: transparent;
+}
+
+/* The physical ragged paper */
+.paper-bg {
+  position: absolute;
+  top: 10px; left: 10px; right: 10px; bottom: 10px; 
+  background-color: #cdad7a; 
+  background-image: 
+    repeating-linear-gradient(45deg, rgba(80,50,20,0.035) 0px, rgba(80,50,20,0.035) 1px, transparent 1px, transparent 3px),
+    repeating-linear-gradient(-45deg, rgba(80,50,20,0.025) 0px, rgba(80,50,20,0.025) 1px, transparent 1px, transparent 4px),
+    radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.08) 0%, rgba(100,50,15,0.3) 100%);
+  filter: url(#torn-edge) drop-shadow(6px 15px 25px rgba(0,0,0,0.85));
+}
+
+.vignette {
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 160px rgba(70, 35, 10, 0.4);
+  pointer-events: none;
+  z-index: 15;
+  mix-blend-mode: multiply;
+}
+
+.crease {
+  position: absolute;
+  pointer-events: none;
+  z-index: 4;
+}
+.crease-1 {
+  top: 0; bottom: 0; left: 35%; width: 5px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.2) 30%, rgba(90,50,20,0.15) 70%, transparent);
+  transform: rotate(1deg);
+}
+.crease-2 {
+  left: 0; right: 0; top: 58%; height: 6px;
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.2) 30%, rgba(90,50,20,0.15) 70%, transparent);
+  transform: rotate(-0.5deg);
+}
+
+.stain {
+  position: absolute;
+  pointer-events: none;
+  z-index: 3;
+  mix-blend-mode: multiply;
+  /* Organic blob shape instead of perfect circle! */
+  border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%;
+}
+.stain-1 {
+  top: -30px; right: 50px; 
+  width: 200px; height: 160px; /* Oval */
+  background: radial-gradient(ellipse, transparent 30%, rgba(90, 50, 10, 0.12) 50%, rgba(60, 30, 5, 0.25) 60%, transparent 70%);
+  transform: rotate(35deg);
+}
+.stain-2 {
+  bottom: -10px; left: -20px; 
+  width: 150px; height: 130px; /* Oval */
+  background: radial-gradient(ellipse, transparent 30%, rgba(70, 40, 10, 0.08) 50%, rgba(50, 25, 5, 0.18) 65%, transparent 75%);
+  transform: rotate(-25deg);
+}
+
+.border-outer, .border-inner, .border-corner {
+  opacity: 0.7;
+  mix-blend-mode: multiply;
+}
+.border-outer {
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(90, 50, 20, 0.8);
+  pointer-events: none;
+  z-index: 5;
+  mix-blend-mode: multiply;
+}
+.border-inner {
+  position: absolute;
+  inset: 18px;
+  border: 2px dashed rgba(90, 50, 20, 0.5);
+  pointer-events: none;
+  z-index: 5;
+  mix-blend-mode: multiply;
+}
+.border-corner {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, rgba(70, 30, 10, 0.85) 50%, transparent 50%);
+  z-index: 6;
+  mix-blend-mode: multiply;
+}
+.border-corner.top-left { top: 11px; left: 11px; transform: rotate(0deg); }
+.border-corner.top-right { top: 11px; right: 11px; transform: rotate(90deg); }
+.border-corner.bottom-right { bottom: 11px; right: 11px; transform: rotate(180deg); }
+.border-corner.bottom-left { bottom: 11px; left: 11px; transform: rotate(270deg); }
+
+
+.watermark-wrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.14; 
+  mix-blend-mode: multiply; 
+}
+.watermark-flag-img {
+  width: 620px; 
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
+  filter: grayscale(1) sepia(0.5);
+}
+
+
+.card-content {
+  position: absolute;
+  top: 10px; left: 10px; right: 10px; bottom: 10px;
+  mix-blend-mode: multiply; 
+  opacity: 0.95; 
+  filter: blur(0.2px); 
+}
+
+/* Header */
+.header {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  text-align: center;
+}
+h1 {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 64px;
+  margin: 0;
+  font-weight: normal;
+  color: #1a1510;
+}
+
+/* Profile Photo Box */
+.photo-box {
+  position: absolute;
+  left: 65px;
+  top: 105px;
+  width: 110px;
+  height: 140px;
+  background-color: transparent; 
+  border: 1px solid rgba(40, 20, 10, 0.2); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  transform: rotate(-1.5deg); 
+  padding: 4px; 
+}
+.photo-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; 
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scale(2.2); /* Reduced from 3.5 so the sides and top don't get cut off! */
+  transform-origin: center;
+  filter: sepia(1) hue-rotate(-10deg) saturate(2) grayscale(0.6) contrast(1.5);
+  opacity: 0.6; /* Transparent a bit to blend in vintage style */
+  mix-blend-mode: multiply; 
+}
+.photo-corner {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 3px solid rgba(30, 15, 5, 0.8); 
+}
+.photo-corner.top-left { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+.photo-corner.top-right { top: -2px; right: -2px; border-left: none; border-bottom: none; }
+.photo-corner.bottom-left { bottom: -2px; left: -2px; border-right: none; border-top: none; }
+.photo-corner.bottom-right { bottom: -2px; right: -2px; border-left: none; border-top: none; }
+/* Fingerprint */
+.fingerprint {
+  position: absolute;
+  left: 55px;
+  bottom: 55px;
+  width: 110px; 
+  height: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  opacity: 0.8; 
+}
+.fingerprint img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scale(1.6) rotate(-8deg); /* Added rotation for careless human stamp look */
+  filter: grayscale(1) contrast(1.5);
+}
+
+/* Main Content */
+.main-content {
+  position: absolute;
+  top: 105px; 
+  right: 50px; 
+  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+}
+.info-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Subtitle */
+.subtitle {
+  font-family: 'Courier Prime', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  letter-spacing: 1px;
+  color: #1a2233;
+  text-align: center;
+}
+
+.info-row {
+  display: flex;
+  align-items: flex-end; 
+  margin-bottom: 8px; 
+  width: 480px; 
+}
+
+/* Labels */
+.label {
+  font-family: 'Old Standard TT', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #2d2014;
+  text-align: right;
+  margin-right: 8px;
+  width: 130px; 
+  flex-shrink: 0;
+  padding-bottom: 3px;
+}
+
+/* Value Wrapper */
+.value-wrapper {
+  flex: 1;
+  border-bottom: 2px solid rgba(50, 35, 20, 0.7);
+  padding-bottom: 2px;
+  padding-left: 5px;
+  display: flex;
+  align-items: flex-end;
+  min-width: 0;
+}
+.info-row.no-line .value-wrapper {
+  border-bottom: none;
+}
+
+/* Typewriter Values */
+.value {
+  font-family: 'Courier Prime', monospace;
+  font-size: 22px; 
+  font-weight: 700;
+  color: #1a2233; 
+  letter-spacing: -0.5px;
+  white-space: nowrap; 
+  transform: translateY(-2px);
+}
+.info-row:nth-child(2) .value { transform: translateY(-3px) rotate(-0.5deg); }
+.info-row:nth-child(3) .value { transform: translateY(-1px) rotate(0.5deg); }
+.info-row:nth-child(4) .value { transform: translateY(-2px) rotate(-1deg); }
+.info-row:nth-child(6) .value { transform: translateY(-2px) rotate(0.8deg); }
+
+/* Handwritten Signature */
+.value.signature {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 38px; 
+  font-weight: normal;
+  color: #121926;
+  white-space: nowrap; 
+  transform: translateY(10px) rotate(-2deg) !important; 
+}
+
+/* Circular Approved Stamp */
+.approved-stamp {
+  position: absolute;
+  bottom: 30px; 
+  right: 40px;
+  width: 110px; 
+  height: 110px;
+  border: 4px double #8a2525;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Special Elite', monospace;
+  color: #8a2525;
+  transform: rotate(-10deg);
+  z-index: 8;
+  pointer-events: none;
+  opacity: 0.85;
+}
+.approved-stamp::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid #8a2525;
+  border-radius: 50%;
+}
+.stamp-text {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+/* Footer */
+.footer {
+  position: absolute;
+  bottom: 15px; 
+  left: 40px; /* Moved inwards slightly for better margins */
+  right: 35px;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.issued {
+  font-family: 'Special Elite', monospace;
+  font-size: 15px;
+  color: #2b2118;
+  letter-spacing: 1px;
+}
+.granted {
+  display: flex;
+  align-items: center;
+}
+.granted-label {
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 1px;
+  color: #2b2118;
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+.granted-name {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 36px;
+  color: #1a1510;
+  transform: translateY(3px) rotate(-1deg);
+  display: inline-block;
+}

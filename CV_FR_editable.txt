@@ -1,0 +1,67 @@
+Meryem El Osmani
+
+IA & SOFTWARE | STAGE PFE 2027
+
+Meknès, Maroc | +212 684 836 656 | <link href="mailto:maryamelosmani@gmail.com">maryamelosmani@gmail.com</link>
+
+<link href="https://github.com/MERYEMELOSMANI" color="#2454a5">GitHub: MERYEMELOSMANI</link> | <link href="https://www.linkedin.com/in/meryem-el-osmani-754a56271" color="#2454a5">LinkedIn: Meryem El Osmani</link>
+
+PROFIL
+
+Étudiante en master IA et systèmes de décision optimale, avec une expérience de team leader et d’ingénieure IA / logiciel stagiaire chez Arimas Holdings, ainsi qu’en analyse freelance Python/SQL. Je relie modélisation, API et applications. Recherche de stage PFE au Maroc, de février / mars à juillet 2027.
+
+EXPÉRIENCE PROFESSIONNELLE
+
+<b>Arimas Holdings</b> | JUIL.-SEPT. 2026
+
+Team leader · Ingénieure IA / logiciel stagiaire
+
+- Team leader au sein de l’équipe de développement de Tadbir AI, une application de gestion d’entreprise intégrant des fonctionnalités d’intelligence artificielle.
+
+- Contribution au développement IA / logiciel d’une plateforme collective de facturation, clients, stocks et reporting. Environnement : Django REST, Next.js, TypeScript, Gemini.
+
+<b>EUMATRIX.eu · Upwork</b> | OCT. 2025-JAN. 2026
+
+Data Analyst freelance
+
+- Collecte de données ciblées pour le marché danois ; nettoyage, transformation et structuration avec Python et SQL.
+
+<b>EST · Meknès</b> | AVR.-JUIN 2024
+
+Stagiaire en développement logiciel
+
+- Développement d’une application PHP/MySQL de génération automatique d’emplois du temps, déployée dans trois départements.
+
+<b>AREP, Meknès</b> | Stagiaire IT, juillet-août 2023 : support, incidents et guides utilisateurs.
+
+PROJETS SÉLECTIONNÉS
+
+<b>ResearchOS</b> | <link href="https://github.com/MERYEMELOSMANI/research-os" color="#2454a5">GitHub</link>
+
+• Recherche documentaire avec génération augmentée par recherche (RAG) et réponses sourcées ; comparaison de modèles prédictifs. FastAPI, Next.js, pgvector
+
+<b>Analyste IA multi-agents</b> | <link href="https://github.com/MERYEMELOSMANI/autonomous-ai-data-analyst" color="#2454a5">GitHub</link>
+
+• Conception d’un système de 6 agents pour analyser les données, vérifier les résultats et produire des graphiques et des rapports. LangGraph, DuckDB, Polars, Gemini
+
+<b>V2C-Sentinel</b> | <link href="https://github.com/MERYEMELOSMANI/V2C-Sentinel" color="#2454a5">GitHub</link>
+
+• Détection d’intrusions CAN (Controller Area Network) en simulation locale : requêtes de confirmation limitées et délais 5G rejoués. Python, Logistic Regression, Random Forest
+
+FORMATION
+
+<b>2025-2027 | Master Intelligence artificielle & systèmes de décision optimale</b><br/>Faculté des Sciences, Meknès · En cours
+
+<b>2024-2025 | Licence Systèmes intelligents & recherche opérationnelle</b><br/>Faculté des Sciences, Meknès
+
+<b>2022-2024 | DUT Génie informatique</b><br/>École Supérieure de Technologie, Meknès
+
+COMPÉTENCES TECHNIQUES
+
+<b>Data & ML:</b> Python, SQL, Pandas, NumPy, Scikit-learn, OpenCV, MediaPipe.<br/><b>Software & MLOps:</b> Django REST, FastAPI, Flask, Next.js, TypeScript, Git, Docker, DVC, MLflow.<br/><b>Optimisation & visualisation:</b> PuLP, programmation linéaire, Streamlit, Plotly, Tableau.
+
+CERTIFICATS & LANGUES
+
+<b>Google Cloud Cybersecurity Certificate</b> | Formation : Python for Data Science & AI - IBM/Coursera.
+
+Arabe : langue maternelle | Français : B2 | Anglais : C1 (EF SET : 74/100)

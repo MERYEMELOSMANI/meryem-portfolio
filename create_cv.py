@@ -1,0 +1,70 @@
+from pathlib import Path
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, HRFlowable
+from reportlab.lib.styles import ParagraphStyle
+from reportlab.lib.colors import HexColor
+from reportlab.lib.enums import TA_LEFT
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.lib.pagesizes import A4
+
+BASE = Path(__file__).parent
+OUT = BASE / 'dist' / 'Meryem_El_Osmani_CV.pdf'
+pdfmetrics.registerFont(TTFont('Arial', r'C:/Windows/Fonts/arial.ttf'))
+pdfmetrics.registerFont(TTFont('ArialBold', r'C:/Windows/Fonts/arialbd.ttf'))
+pdfmetrics.registerFontFamily('Arial', normal='Arial', bold='ArialBold')
+ink = HexColor('#10263b')
+body = ParagraphStyle('body', fontName='Arial', fontSize=9.1, leading=11.4, textColor=ink, spaceAfter=2)
+small = ParagraphStyle('small', parent=body, fontSize=8.5, leading=11)
+title = ParagraphStyle('name', parent=body, fontName='ArialBold', fontSize=23, leading=29, spaceAfter=2)
+headline = ParagraphStyle('headline', parent=body, fontName='ArialBold', fontSize=11.5, leading=16, spaceAfter=4)
+section = ParagraphStyle('section', parent=body, fontName='ArialBold', fontSize=10, leading=14, spaceBefore=6, spaceAfter=3, textColor=HexColor('#2454bd'))
+entry = ParagraphStyle('entry', parent=body, fontName='ArialBold', fontSize=9.3, leading=11.7, spaceBefore=3)
+bullet = ParagraphStyle('bullet', parent=body, leftIndent=9, firstLineIndent=-7, spaceAfter=2)
+story=[]
+def p(text, style=body): story.append(Paragraph(text,style))
+def sec(text):
+    p(text,section)
+    story.append(HRFlowable(width='100%',thickness=.5,color=HexColor('#c8d6e4'),spaceAfter=3))
+def b(text): p('• '+text,bullet)
+p('MERYEM EL OSMANI',title)
+p('STAGE PFE - DATA & INTELLIGENCE ARTIFICIELLE',headline)
+p('Disponibilité : février / mars à juillet 2027 | Maroc',body)
+p('Meknès · +212 684 836 656 · <link href="mailto:maryamelosmani@gmail.com">maryamelosmani@gmail.com</link>',small)
+p('<link href="https://github.com/MERYEMELOSMANI" color="#2454bd">GitHub : MERYEMELOSMANI</link> · <link href="https://www.linkedin.com/in/meryem-el-osmani-754a56271" color="#2454bd">LinkedIn : Meryem El Osmani</link>',small)
+sec('PROFIL')
+p('Étudiante en master Intelligence artificielle et systèmes de décision optimale, avec une expérience de team leader et d’ingénieure IA / logiciel stagiaire chez Arimas Holdings. Pratique de Python, SQL, du machine learning et de l’optimisation à travers des projets et des missions freelance. Recherche un stage PFE pour contribuer à des applications Data et IA répondant à des besoins métier.')
+sec('EXPÉRIENCE PROFESSIONNELLE')
+p('Team leader & ingénieure IA / logiciel stagiaire | Arimas Holdings',entry)
+p('Juillet - septembre 2026 · Projet Tadbir AI',small)
+b('Rôle de team leader au sein de l’équipe de développement d’une application de gestion d’entreprise intégrant des fonctionnalités d’IA.')
+b('Contribution au développement logiciel et IA du projet ; application réunissant facturation, stocks, clients et reporting, avec extraction de documents et import de données assisté par IA.')
+p('Environnement du projet : Python, Django REST Framework, Next.js, TypeScript, Gemini.',small)
+p('Data Analyst freelance | Upwork - client EUMATRIX.eu',entry)
+p('Octobre 2025 - janvier 2026 · À distance',small)
+b('Collecte de données ciblées sur le marché danois ; nettoyage, transformation et structuration avec Python et SQL.')
+b('Contrôle de l’intégrité des données et automatisation de la collecte ; mission suivie d’un nouvel engagement client.')
+p('Stagiaire en développement logiciel | EST, Meknès',entry)
+p('Avril - juin 2024 · Projet de fin d’études',small)
+b('Développement d’une application PHP/MySQL de génération d’emplois du temps, déployée dans trois départements ; rédaction des guides d’utilisation et de maintenance.')
+p('Stagiaire technicienne informatique | AREP, Meknès',entry)
+p('Juillet - août 2023',small)
+b('Résolution d’incidents, support aux outils internes et rédaction de guides pour les utilisateurs.')
+sec('PROJETS SÉLECTIONNÉS')
+p('Supply Chain Optimization Dashboard | Python, Streamlit, PuLP',entry)
+b('Modélisation de scénarios logistiques sous contraintes et comparaison de solutions dans un tableau de bord interactif. Projet de simulation et d’aide à la décision.')
+p('<link href="https://github.com/MERYEMELOSMANI/supply-chain-optimization-dashboard" color="#2454bd">Code : github.com/MERYEMELOSMANI/supply-chain-optimization-dashboard</link>',small)
+p('V2C-Sentinel | Python, machine learning, simulation',entry)
+b('Prototype de recherche comparant une alerte locale par régression logistique et une confirmation par forêt aléatoire, avec budget de requêtes et délais 5G rejoués. Évaluation locale sur enregistrements CAN.')
+p('<link href="https://github.com/MERYEMELOSMANI/V2C-Sentinel" color="#2454bd">Code : github.com/MERYEMELOSMANI/V2C-Sentinel</link>',small)
+sec('FORMATION')
+p('<b>Master Intelligence artificielle & systèmes de décision optimale</b> | 2025 - 2027 (en cours)<br/>Faculté des Sciences, Meknès',body)
+p('<b>Licence Systèmes intelligents & recherche opérationnelle</b> | 2024 - 2025<br/>Faculté des Sciences, Meknès',body)
+p('<b>DUT Génie informatique</b> | EST, Meknès | 2022 - 2024',body)
+sec('COMPÉTENCES')
+p('<b>Data :</b> Python, SQL, Pandas, NumPy, Tableau, Excel, Matplotlib, Seaborn.<br/><b>IA & optimisation :</b> Scikit-learn, régression, arbres de décision, programmation linéaire, PuLP.<br/><b>Développement :</b> Git/GitHub, MySQL, Streamlit, PHP ; projet de stage avec Django, Next.js et Gemini.',body)
+sec('CERTIFICATS, FORMATIONS & LANGUES')
+p('<b>Google Cloud Cybersecurity Certificate</b> - Google Cloud.<br/><b>IBM / Coursera :</b> Python for Data Science & AI ; Generative AI for Data Analytics ; Prompt Engineering Foundations. <b>AWS :</b> Technical Essentials.',small)
+p('<b>Arabe :</b> langue maternelle · <b>Français :</b> B2 · <b>Anglais :</b> C1 (EF SET : 74/100)',body)
+doc=SimpleDocTemplate(str(OUT),pagesize=A4,rightMargin=35,leftMargin=35,topMargin=27,bottomMargin=25,title='Meryem El Osmani - Stage PFE Data et IA',author='Meryem El Osmani')
+doc.build(story)
+print(OUT)

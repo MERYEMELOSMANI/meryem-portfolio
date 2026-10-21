@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RedM ID Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Pinyon+Script&family=Special+Elite&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- SVG Filter to create organic torn edges on the paper -->
+  <svg style="position: absolute; width: 0; height: 0;" aria-hidden="true">
+    <filter id="torn-edge" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
+
+  <div class="id-card">
+    
+    <!-- The physically ragged paper background -->
+    <div class="paper-bg">
+      <div class="vignette"></div>
+      <div class="stain stain-1"></div>
+      <div class="stain stain-2"></div>
+      <div class="crease crease-1"></div>
+      <div class="crease crease-2"></div>
+      
+      <!-- Inner decorative border (Gets beautifully hand-drawn/weathered by torn-edge!) -->
+      <div class="border-outer"></div>
+      <div class="border-inner"></div>
+      <div class="border-corner top-left"></div>
+      <div class="border-corner top-right"></div>
+      <div class="border-corner bottom-left"></div>
+      <div class="border-corner bottom-right"></div>
+
+      <!-- USA Flag Watermark -->
+      <div class="watermark-wrapper">
+        <img src="usa%20flag.png" class="watermark-flag-img" alt="USA Flag">
+      </div>
+    </div>
+
+    <!-- The sharp, readable printed content -->
+    <div class="card-content">
+      
+      <div class="header">
+        <h1>United States of America</h1>
+      </div>
+
+      <!-- Profile Photo -->
+      <div class="photo-box">
+        <div class="photo-inner">
+          <img src="man.png" alt="Profile Photo" class="profile-photo">
+        </div>
+        <div class="photo-corner top-left"></div>
+        <div class="photo-corner top-right"></div>
+        <div class="photo-corner bottom-left"></div>
+        <div class="photo-corner bottom-right"></div>
+      </div>
+
+      <div class="fingerprint">
+        <img src="thumb.png" alt="Fingerprint">
+      </div>
+
+      <div class="main-content">
+        <div class="info-container">
+          <div class="subtitle">Identification card</div>
+          <div class="info-row">
+            <span class="label">Legal Name:</span>
+            <div class="value-wrapper">
+              <span class="value">MAX SHERAXI</span>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="label">Job:</span>
+            <div class="value-wrapper">
+              <span class="value">UNEMPLOYED</span>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="label">Spouse:</span>
+            <div class="value-wrapper">
+              <span class="value">NONE</span>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="label">Signature:</span>
+            <div class="value-wrapper">
+              <span class="value signature">Max Sheraxi</span>
+            </div>
+          </div>
+          <div class="info-row no-line">
+            <span class="label">ID:</span>
+            <div class="value-wrapper">
+              <span class="value">10482182</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- New Circular Approved Stamp -->
+      <div class="approved-stamp">
+        <div class="stamp-text">APPROVED</div>
+      </div>
+
+      <div class="footer">
+        <div class="issued">ISSUED: 02/03/1901</div>
+        <div class="granted">
+          <span class="granted-label">OFFICIALLY AWARDED BY:</span> 
+          <!-- Changed to State Governor -->
+          <span class="granted-name">State Governor</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

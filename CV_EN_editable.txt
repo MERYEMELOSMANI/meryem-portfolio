@@ -1,0 +1,67 @@
+Meryem El Osmani
+
+AI & SOFTWARE | GRADUATION INTERNSHIP 2027
+
+Meknès, Morocco | +212 684 836 656 | <link href="mailto:maryamelosmani@gmail.com">maryamelosmani@gmail.com</link>
+
+<link href="https://github.com/MERYEMELOSMANI" color="#2454a5">GitHub: MERYEMELOSMANI</link> | <link href="https://www.linkedin.com/in/meryem-el-osmani-754a56271" color="#2454a5">LinkedIn: Meryem El Osmani</link>
+
+PROFESSIONAL SUMMARY
+
+Master’s student in AI and Optimal Decision Systems, with team leadership and AI/software internship experience at Arimas Holdings and freelance Python/SQL data analysis. I connect modelling, APIs and applications. Seeking a graduation internship in Morocco, February / March to July 2027.
+
+PROFESSIONAL EXPERIENCE
+
+<b>Arimas Holdings</b> | JUL.-SEP. 2026
+
+Team Leader · AI / Software Engineering Intern
+
+- Team leader within the development team for Tadbir AI, a business management application integrating artificial intelligence capabilities.
+
+- Contributed to AI/software development of a team-built platform for invoicing, customers, inventory and reporting. Environment: Django REST, Next.js, TypeScript, Gemini.
+
+<b>EUMATRIX.eu · Upwork</b> | OCT. 2025-JAN. 2026
+
+Freelance Data Analyst
+
+- Collected targeted datasets for the Danish market; cleaned, transformed and structured data using Python and SQL.
+
+<b>EST · Meknès</b> | APR.-JUN. 2024
+
+Software Development Intern
+
+- Developed a PHP/MySQL application for automatic timetable generation, deployed across three departments.
+
+<b>AREP, Meknès</b> | IT intern, July-August 2023: support, incident resolution and user guides.
+
+SELECTED PROJECTS
+
+<b>ResearchOS</b> | <link href="https://github.com/MERYEMELOSMANI/research-os" color="#2454a5">GitHub</link>
+
+• Document retrieval with Retrieval-Augmented Generation (RAG) and sourced answers; predictive model benchmarking. FastAPI, Next.js, pgvector
+
+<b>Analyste IA multi-agents</b> | <link href="https://github.com/MERYEMELOSMANI/autonomous-ai-data-analyst" color="#2454a5">GitHub</link>
+
+• Design of a 6-agent system to analyze data, verify results, and generate charts and reports. LangGraph, DuckDB, Polars, Gemini
+
+<b>V2C-Sentinel</b> | <link href="https://github.com/MERYEMELOSMANI/V2C-Sentinel" color="#2454a5">GitHub</link>
+
+• CAN (Controller Area Network) intrusion detection under local simulation: constrained confirmation requests and replayed 5G delays. Python, Logistic Regression, Random Forest
+
+EDUCATION
+
+<b>2025-2027 | Master’s in Artificial Intelligence & Optimal Decision Systems</b><br/>Faculty of Sciences, Meknès · In progress
+
+<b>2024-2025 | Bachelor’s in Intelligent Systems & Operations Research</b><br/>Faculty of Sciences, Meknès
+
+<b>2022-2024 | University Diploma of Technology · Computer Engineering</b><br/>École Supérieure de Technologie, Meknès
+
+TECHNICAL SKILLS
+
+<b>Data & ML:</b> Python, SQL, Pandas, NumPy, Scikit-learn, OpenCV, MediaPipe.<br/><b>Software & MLOps:</b> Django REST, FastAPI, Flask, Next.js, TypeScript, Git, Docker, DVC, MLflow.<br/><b>Optimisation & visualization:</b> PuLP, linear programming, Streamlit, Plotly, Tableau.
+
+CERTIFICATES & LANGUAGES
+
+<b>Google Cloud Cybersecurity Certificate</b> | Training: Python for Data Science & AI - IBM/Coursera.
+
+Arabic: Native | French: B2 | English: C1 (EF SET: 74/100)

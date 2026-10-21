@@ -1,0 +1,53 @@
+MERYEM EL OSMANI
+STAGE PFE - DATA & INTELLIGENCE ARTIFICIELLE
+Disponibilité : février / mars à juillet 2027 | Maroc
+Meknès · +212 684 836 656 · maryamelosmani@gmail.com
+GitHub : MERYEMELOSMANI · LinkedIn : Meryem El Osmani
+PROFIL
+Étudiante en master Intelligence artificielle et systèmes de décision optimale, avec une expérience de team leader et
+d’ingénieure IA / logiciel stagiaire chez Arimas Holdings. Pratique de Python, SQL, du machine learning et de l’optimisation à
+travers des projets et des missions freelance. Recherche un stage PFE pour contribuer à des applications Data et IA répondant
+à des besoins métier.
+EXPÉRIENCE PROFESSIONNELLE
+Team leader & ingénieure IA / logiciel stagiaire | Arimas Holdings
+Juillet - septembre 2026 · Projet Tadbir AI
+• Rôle de team leader au sein de l’équipe de développement d’une application de gestion d’entreprise intégrant des
+fonctionnalités d’IA.
+• Contribution au développement logiciel et IA du projet ; application réunissant facturation, stocks, clients et reporting, avec
+extraction de documents et import de données assisté par IA.
+Environnement du projet : Python, Django REST Framework, Next.js, TypeScript, Gemini.
+Data Analyst freelance | Upwork - client EUMATRIX.eu
+Octobre 2025 - janvier 2026 · À distance
+• Collecte de données ciblées sur le marché danois ; nettoyage, transformation et structuration avec Python et SQL.
+• Contrôle de l’intégrité des données et automatisation de la collecte ; mission suivie d’un nouvel engagement client.
+Stagiaire en développement logiciel | EST, Meknès
+Avril - juin 2024 · Projet de fin d’études
+• Développement d’une application PHP/MySQL de génération d’emplois du temps, déployée dans trois départements ;
+rédaction des guides d’utilisation et de maintenance.
+Stagiaire technicienne informatique | AREP, Meknès
+Juillet - août 2023
+• Résolution d’incidents, support aux outils internes et rédaction de guides pour les utilisateurs.
+PROJETS SÉLECTIONNÉS
+Supply Chain Optimization Dashboard | Python, Streamlit, PuLP
+• Modélisation de scénarios logistiques sous contraintes et comparaison de solutions dans un tableau de bord interactif. Projet
+de simulation et d’aide à la décision.
+Code : github.com/MERYEMELOSMANI/supply-chain-optimization-dashboard
+V2C-Sentinel | Python, machine learning, simulation
+• Prototype de recherche comparant une alerte locale par régression logistique et une confirmation par forêt aléatoire, avec
+budget de requêtes et délais 5G rejoués. Évaluation locale sur enregistrements CAN.
+Code : github.com/MERYEMELOSMANI/V2C-Sentinel
+FORMATION
+Master Intelligence artificielle & systèmes de décision optimale | 2025 - 2027 (en cours)
+Faculté des Sciences, Meknès
+Licence Systèmes intelligents & recherche opérationnelle | 2024 - 2025
+Faculté des Sciences, Meknès
+DUT Génie informatique | EST, Meknès | 2022 - 2024
+COMPÉTENCES
+Data : Python, SQL, Pandas, NumPy, Tableau, Excel, Matplotlib, Seaborn.
+IA & optimisation : Scikit-learn, régression, arbres de décision, programmation linéaire, PuLP.
+Développement : Git/GitHub, MySQL, Streamlit, PHP ; projet de stage avec Django, Next.js et Gemini.
+CERTIFICATS, FORMATIONS & LANGUES
+Google Cloud Cybersecurity Certificate - Google Cloud.
+IBM / Coursera : Python for Data Science & AI ; Generative AI for Data Analytics ; Prompt Engineering Foundations. AWS : Technical
+Essentials.
+Arabe : langue maternelle · Français : B2 · Anglais : C1 (EF SET : 74/100)
