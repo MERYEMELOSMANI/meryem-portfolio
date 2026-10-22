@@ -658,12 +658,20 @@ def build_full_html():
                 <span>{bi("Stage PFE 2027 · Disponible", "PFE Internship 2027 · Available")}</span>
               </div>
 
+              <div class="hero-portrait-master-badge">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                <span>{bi("Master IA & Décision", "Master's in AI & Decision")}</span>
+              </div>
+
               <div class="hero-portrait-glass-bar">
                 <div class="glass-bar-headline">
-                  <span class="glass-title">{bi("INGÉNIEURE IA & LOGICIEL", "AI & SOFTWARE ENGINEER")}</span>
-                  <span class="glass-loc">📍 Meknès, Maroc</span>
+                  <div class="glass-title-badge">
+                    <span class="glass-check">✓</span>
+                    <span class="glass-title">{bi("INGÉNIEURE IA & LOGICIEL", "AI & SOFTWARE ENGINEER")}</span>
+                  </div>
+                  <span class="glass-loc">📍 Meknès</span>
                 </div>
-                <p class="glass-sub">{bi("Intelligence Artificielle · Computer Vision · MLOps", "Artificial Intelligence · Computer Vision · MLOps")}</p>
+                <p class="glass-sub">{bi("Computer Vision · MLOps · Architecture Logicielle", "Computer Vision · MLOps · Full-Stack Systems")}</p>
                 <div class="glass-stats-strip">
                   <div class="glass-stat">
                     <strong>10</strong>
