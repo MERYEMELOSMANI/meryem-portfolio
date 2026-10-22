@@ -894,6 +894,77 @@ h1 {
 /* ==========================================================================
    4. More Projects Grid
    ========================================================================== */
+/* Filters Bar for Projects */
+.filters-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding: 12px 24px;
+  background: rgba(16, 23, 37, 0.7);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(14px);
+}
+
+.filter-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.filters-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-btn {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  color: #fff;
+  border-color: var(--accent-border);
+  background: var(--accent-subtle);
+}
+
+.filter-btn[aria-pressed="true"],
+.filter-btn.active {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 2px 10px var(--accent-glow);
+}
+
+.project-actions-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+.project-actions-row .source-btn {
+  margin-top: 0;
+}
+
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));

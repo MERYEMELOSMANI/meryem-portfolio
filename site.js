@@ -93,7 +93,11 @@ const cards = document.querySelectorAll('.project');
 filterButtons.forEach(button => {
   button.addEventListener('click', () => {
     const selected = button.dataset.filter;
-    filterButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+    filterButtons.forEach(item => {
+      const isCurrent = item === button;
+      item.setAttribute('aria-pressed', String(isCurrent));
+      item.classList.toggle('active', isCurrent);
+    });
     
     cards.forEach(card => {
       const isHidden = selected !== 'all' && card.dataset.category !== selected;

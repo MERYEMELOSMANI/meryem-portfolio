@@ -1,17 +1,16 @@
 """
 Complete Portfolio Generator for Meryem El Osmani
-Faithfully implementing the full 11-section content structure:
-1. Homepage introduction
-2. About me: Connecting analysis with implementation
-3. Selected projects (Tadbir AI, Customer Churn MLOps, V2C-Sentinel)
-4. More projects (Pricing Engine, Supply Chain, Traffic, Gesture Suite, Contact Manager)
-5. Experience (Arimas Holdings, EUMATRIX.eu, EST, AREP)
-6. Areas of practice (Data analysis, AI/ML, Software/MLOps, Operations Research)
-7. Project journal (5 engineering research notes)
-8. Education (Master, Licence, DUT)
-9. Certificates & training (Google Cloud, IBM, AWS, Tableau, NTU, Languages)
-10. Contact (Stage PFE in Morocco, Email, Phone, LinkedIn, GitHub, dual CV download)
-11. Interactive case study modal for deep-dive exploration
+Featuring ONLY her latest, genuine production and research GitHub projects:
+1. BidPilot AI (bidpilot-ai)
+2. ResearchOS (research-os)
+3. Analyste IA multi-agents (autonomous-ai-data-analyst)
+4. V2C-Sentinel (V2C-Sentinel)
+5. FlowDesk AI (flowdesk-ai)
+6. Tadbir AI (FAWATIR-ROOT)
+7. Customer Churn · MLOps (churn-prediction-mlops)
+8. Pricing Analytics Engine (pricing-analytics-engine)
+9. Supply Chain Optimisation (supply-chain-optimization-dashboard)
+
 Aesthetic: Dark & precise AI research & software engineering (graphite, off-white, restrained electric-blue).
 Bilingual: Instant FR / EN switching via header button.
 """
@@ -23,8 +22,34 @@ DIST = ROOT / 'dist'
 DIST.mkdir(exist_ok=True)
 GH = 'https://github.com/MERYEMELOSMANI/'
 
-# Detailed case studies data matching structure 11 (CV featured projects)
+# 4 Featured In-Depth Spotlight Case Studies
 case_studies = {
+    'bidpilot-ai': {
+        'id': 'bidpilot-ai',
+        'title': 'BidPilot AI',
+        'tag': 'AIDE À LA DÉCISION · NLP & GOOGLE OR-TOOLS CP-SAT',
+        'repo': 'bidpilot-ai',
+        'fr': {
+            'subtitle': 'Système d’aide à la décision pour les achats · Optimisation CP-SAT & Matching NLP',
+            'overview': 'Application d’aide à la décision pour les appels d’offres (RFQ) combinant le matching sémantique par embeddings NLP (Sentence-Transformers) et l’optimisation mathématique discrète exacte avec Google OR-Tools CP-SAT pour minimiser le coût d’achat total sous contraintes de délais, capacités fournisseurs et quantités minimales (MOQ).',
+            'contribution': 'Architecture logicielle et modélisation mathématique complète : pipeline de vectorisation et réconciliation sémantique des devis fournisseurs non standardisés, formulation du programme d’optimisation discrète avec Google OR-Tools CP-SAT et détection d’infaisabilité, API asynchrone FastAPI et tableau de bord Next.js / TypeScript.',
+            'how_it_works': 'Les lignes de devis fournisseurs bruts sont transformées en embeddings vectoriels et associées aux lignes de la demande d’achat par similarité cosinus avec seuil de confiance et arbitrage humain. Le solveur CP-SAT prend les correspondances validées et résout un programme d’optimisation discrète pour déterminer les volumes exacts alloués à chaque fournisseur tout en respectant les MOQ, capacités maximales et fenêtres de livraison.',
+            'decisions': 'Sélection du solveur Google OR-Tools CP-SAT (Constraint Programming over Finite Domains) plutôt qu’un solveur MIP linéaire classique afin de modéliser nativement les contraintes logiques disjonctives (coûts fixes d’activation de fournisseur, MOQ discontinues). Utilisation d’embeddings locaux pour une latence d’inférence maîtrisée.',
+            'evaluation': 'Benchmark sur des scénarios de simulation d’achats industriels : comparaison des coûts optimisés par rapport à une allocation gloutonne baseline, validation de la détection d’infaisabilité budgétaire et tests de sensibilité aux variations de prix fournisseurs.',
+            'limitations': 'Prototype de recherche et d’ingénierie évalué sur des données synthétiques contrôlées. Ne comprend pas de connecteur direct vers un progiciel ERP en production (SAP/Oracle).',
+            'lessons': 'Dans les systèmes d’aide à la décision critique, la transparence algorithmique et l’explication des causes d’infaisabilité sont tout aussi essentielles aux décideurs que la valeur de la fonction objectif.'
+        },
+        'en': {
+            'subtitle': 'Enterprise Procurement Decision Support · CP-SAT Optimization & NLP Matching',
+            'overview': 'Enterprise decision-support application for industrial RFQ quotations coupling NLP semantic embeddings with exact discrete mathematical optimization (Google OR-Tools CP-SAT) to minimize procurement spend under delivery deadlines, supplier capacities, and minimum order quantities (MOQs).',
+            'contribution': 'Full-stack software architecture and mathematical modeling: NLP semantic matching pipeline reconciling non-standard supplier quotations, discrete CP-SAT formulation with infeasibility diagnostics in Google OR-Tools, asynchronous FastAPI backend, and Next.js / TypeScript dashboard.',
+            'how_it_works': 'Unstructured supplier quotation lines are embedded and matched against RFQ specifications using cosine similarity with confidence thresholds and manual override capability. The CP-SAT solver ingests verified pairings and solves a discrete constraint programming model to allocate quantities across suppliers, strictly respecting MOQs, volume caps, and delivery schedules.',
+            'decisions': 'Selected Google OR-Tools CP-SAT solver over standard linear MIP solvers to natively model disjunctive logic constraints (supplier activation fixed costs, discontinuous minimum order quantities) without heuristic relaxation.',
+            'evaluation': 'Benchmarked across industrial procurement simulation scenarios: quantified cost reductions against greedy baseline allocations, rigorously verified infeasibility detection under tight budget caps, and performed parameter sensitivity tests.',
+            'limitations': 'Local portfolio prototype operating on synthetic RFQ data. Multi-user authentication and hardened cloud deployment are outside the demonstration scope.',
+            'lessons': 'In mission-critical decision support, algorithmic interpretability and actionable infeasibility diagnostics matter just as much to stakeholders as raw cost minimization.'
+        }
+    },
     'researchos': {
         'id': 'researchos',
         'title': 'ResearchOS',
@@ -105,13 +130,39 @@ case_studies = {
     }
 }
 
-# Modals for all projects (including Tadbir AI & Churn)
+# Modals for all 9 genuine GitHub projects
 all_case_studies = {
     **case_studies,
+    'flowdesk-ai': {
+        'id': 'flowdesk-ai',
+        'title': 'FlowDesk AI',
+        'tag': 'SERVICE MANAGEMENT · ML & GOOGLE OR-TOOLS CP-SAT',
+        'repo': 'flowdesk-ai',
+        'fr': {
+            'subtitle': 'Plateforme de gestion de services & Planification · Classification ML & Optimisation CP-SAT',
+            'overview': 'Plateforme intelligente de gestion de services d’entreprise (ITSM) associant la classification automatique de tickets par machine learning (TF-IDF + Régression Logistique avec Scikit-learn) et la planification mathématique optimale des équipes avec Google OR-Tools CP-SAT selon les compétences, disponibilités et délais SLA.',
+            'contribution': 'Conception et développement complet : entraînement et validation du modèle de classification NLP de tickets, formulation mathématique du problème d’affectation sous Google OR-Tools CP-SAT avec équilibrage de charge, API FastAPI asynchrone et interface moderne Next.js / TypeScript.',
+            'how_it_works': 'Chaque ticket entrant est analysé par un pipeline TF-IDF + Régression Logistique qui prédit sa catégorie et son niveau d’urgence avec un score de confiance étalonné. Le moteur d’optimisation OR-Tools CP-SAT affecte les tickets du backlog aux intervenants qualifiés et disponibles, en maximisant le respect des délais SLA et en équilibrant la charge hebdomadaire.',
+            'decisions': 'Choix d’un modèle ML transparent et ultra-rapide (<10 ms) avec Scikit-learn pour la catégorisation sans dépendance cloud coûteuse, couplé à un solveur de satisfaction de contraintes CP-SAT pour garantir formellement l’adéquation compétences-tâches et l’équité de charge.',
+            'evaluation': 'Évaluation des métriques de classification (Accuracy, F1-score macro) sur jeux de test et tests de robustesse du solveur CP-SAT face à des pics d’arrivée de tickets sous contraintes d’indisponibilité d’agents.',
+            'limitations': 'Évalué sur des jeux de données d’incidents synthétiques réalistes pour la démonstration. L’intégration avec des annuaires d’entreprise LDAP/Okta n’est pas implémentée dans ce prototype.',
+            'lessons': 'La synergie entre modélisation statistique (machine learning probabiliste) et recherche opérationnelle (optimisation exacte déterministe) permet d’automatiser des flux opérationnels complexes tout en conservant une garantie formelle de faisabilité.'
+        },
+        'en': {
+            'subtitle': 'Enterprise Service Management & Scheduling · ML Classification & CP-SAT Optimization',
+            'overview': 'Intelligent enterprise service-management (ITSM) platform coupling machine learning text classification (Scikit-learn TF-IDF + Logistic Regression) with exact discrete optimization (Google OR-Tools CP-SAT) to categorize support tickets and solve technician shift assignment under skills, availability, and SLA deadlines.',
+            'contribution': 'End-to-end design and software development: training and evaluating the ticket classification NLP model, mathematical formulation of technician assignment under Google OR-Tools CP-SAT with workload balancing, asynchronous FastAPI backend, and Next.js / TypeScript interface.',
+            'how_it_works': 'Incoming service requests are processed by a TF-IDF + Logistic Regression pipeline that infers category and urgency with calibrated confidence scores. The OR-Tools CP-SAT engine then assigns backlog tickets to qualified, available agents, optimizing SLA compliance and balancing weekly workload distributions.',
+            'decisions': 'Chose a lightweight, interpretable Scikit-learn ML pipeline for ultra-fast (<10ms) local inference, coupled with CP-SAT constraint programming to formally guarantee skill alignment and strict workload limits.',
+            'evaluation': 'Evaluated text categorization metrics (Accuracy, macro F1-score) across test splits and benchmarked CP-SAT solver responsiveness during ticket surges and sudden technician unavailability.',
+            'limitations': 'Evaluated on synthetic ITSM incident logs for demonstration. Enterprise identity integration (LDAP/Okta SSO) is outside the prototype scope.',
+            'lessons': 'Combining probabilistic machine learning with deterministic operations research provides reliable automation with formal feasibility guarantees.'
+        }
+    },
     'tadbir-ai': {
         'id': 'tadbir-ai',
         'title': 'Tadbir AI',
-        'tag': 'AI-assisted business software · Internship project',
+        'tag': 'AI & BUSINESS SOFTWARE · INTERNSHIP',
         'repo': 'FAWATIR-ROOT',
         'fr': {
             'subtitle': 'Logiciel de gestion métier assisté par l’IA · Projet de stage',
@@ -137,7 +188,7 @@ all_case_studies = {
     'churn-mlops': {
         'id': 'churn-mlops',
         'title': 'Customer Churn · MLOps',
-        'tag': 'Machine learning · APIs · Experiment tracking',
+        'tag': 'MACHINE LEARNING · MLOPS · DRIFT MONITORING',
         'repo': 'churn-prediction-mlops',
         'fr': {
             'subtitle': 'Pipeline de machine learning · APIs · Suivi d’expériences',
@@ -159,14 +210,89 @@ all_case_studies = {
             'limitations': 'Validated in local Docker execution. Cloud deployment pipelines are documented but not maintained live to avoid idle hosting costs.',
             'lessons': 'Model training code is only a fraction of the real-world challenge; reproducible environments, clean pipelines, and drift detection ensure true operational reliability.'
         }
+    },
+    'pricing-engine': {
+        'id': 'pricing-engine',
+        'title': 'Pricing Analytics Engine',
+        'tag': 'SQL · ANALYTICS · FORECASTING',
+        'repo': 'pricing-analytics-engine',
+        'fr': {
+            'subtitle': 'Intelligence de tarification e-commerce sur 1M+ transactions · DuckDB & Prophet',
+            'overview': 'Application analytique construite autour du jeu public Online Retail II (>1 million de transactions). Elle explore la segmentation RFM, la classification ABC-XYZ, les prévisions de revenus avec Prophet et les corrélations prix-demande dans un tableau de bord web interactif.',
+            'contribution': 'Conception et développement complet : requêtes analytiques vectorisées sous DuckDB pour le calcul de métriques sur 1M+ lignes en millisecondes, API FastAPI et visualisations dynamiques Chart.js.',
+            'how_it_works': 'DuckDB exécute les calculs de cohortes, de valeur client (CLV) et de segmentation RFM directement en mémoire. Les séries temporelles de ventes sont agrégées pour alimenter un modèle de prévision Prophet, tandis que l’élasticité prix-demande est explorée par modélisation statistique.',
+            'decisions': 'Utilisation de DuckDB comme moteur analytique in-process pour éliminer la latence d’une base de données externe tout en offrant des performances SQL analytiques de pointe sur des millions d’enregistrements.',
+            'evaluation': 'Validation de la vitesse d’exécution SQL (requêtes sous les 80ms sur 1M+ transactions) et contrôle de la cohérence statistique des clusters clients.',
+            'limitations': 'Les corrélations observées entre prix et demande sont empiriques et ne constituent pas une démonstration de causalité commerciale.',
+            'lessons': 'L’optimisation des calculs au niveau du moteur analytique (colonnes vectorisées) est indispensable pour garantir une fluidité parfaite sur des volumes de transactions importants.'
+        },
+        'en': {
+            'subtitle': 'E-Commerce Pricing Intelligence on 1M+ Transactions · DuckDB & Prophet',
+            'overview': 'Analytical application built on the Online Retail II dataset (>1 million transactions). It integrates RFM customer segmentation, ABC-XYZ inventory classification, Prophet revenue forecasting, and price-demand correlation analysis in an interactive dashboard.',
+            'contribution': 'Full-stack development: authored vectorized analytical queries in DuckDB processing 1M+ records in milliseconds, FastAPI backend, and Chart.js dynamic visualizations.',
+            'how_it_works': 'DuckDB executes cohort analysis, customer lifetime value (CLV), and RFM segmentation directly in memory. Aggregated transaction time series feed into Prophet forecasting models while price-demand relationships are modeled statistically.',
+            'decisions': 'Selected DuckDB as an embedded analytical engine to avoid database overhead while delivering sub-80ms analytical query speeds on over a million records.',
+            'evaluation': 'Benchmarked query performance (<80ms response time on 1M+ rows) and verified statistical consistency across customer segmentation clusters.',
+            'limitations': 'Price-demand correlations are observational and do not demonstrate causal commercial elasticity.',
+            'lessons': 'Vectorized columnar query design is the single most effective lever for delivering real-time analytical exploration over high-volume transactional data.'
+        }
+    },
+    'supply-chain': {
+        'id': 'supply-chain',
+        'title': 'Supply Chain Optimisation',
+        'tag': 'OPERATIONS RESEARCH · SIMULATION',
+        'repo': 'supply-chain-optimization-dashboard',
+        'fr': {
+            'subtitle': 'Aide à la décision logistique sous contraintes · Programmation linéaire PuLP & Monte-Carlo',
+            'overview': 'Tableau de bord interactif pour explorer des scénarios d’approvisionnement et d’allocation de ressources. Formulation en programmation linéaire, optimisation multi-objectifs, modélisation de l’incertitude par simulation de Monte-Carlo et analyses de sensibilité.',
+            'contribution': 'Formulation mathématique complète du problème d’allocation sous contraintes de capacités d’entrepôts et de coûts de transport avec PuLP, génération de distributions stochastiques et interface interactive Streamlit / Plotly.',
+            'how_it_works': 'L’utilisateur configure les capacités logistiques, demandes clients et coûts unitaires. Le solveur de programmation linéaire résout le problème de transport optimal. Un module de simulation de Monte-Carlo évalue la robustesse de la chaîne logistique face aux aléas de demande.',
+            'decisions': 'Utilisation de PuLP pour une formulation mathématique claire et portable, associée à des graphiques interactifs Plotly pour rendre les surfaces de compromis immédiatement compréhensibles.',
+            'evaluation': 'Simulation de scénarios de rupture de stock et analyse de sensibilité sur les capacités d’approvisionnement.',
+            'limitations': 'Modèle de simulation à vocation méthodologique et pédagogique, fondé sur des paramètres synthétiques.',
+            'lessons': 'La programmation linéaire doit toujours être complétée par des analyses de robustesse face à l’incertitude pour être exploitable en environnement réel.'
+        },
+        'en': {
+            'subtitle': 'Logistics Decision Support under Constraints · PuLP Linear Programming & Monte Carlo',
+            'overview': 'Interactive decision-support dashboard for exploring procurement and resource allocation scenarios under operational constraints, using linear programming, multi-objective trade-offs, Monte Carlo simulation, and sensitivity analysis.',
+            'contribution': 'Complete mathematical formulation of warehouse allocation and transportation cost minimization using PuLP, stochastic simulation distributions, and interactive Streamlit / Plotly UI.',
+            'how_it_works': 'Users define supplier capacities, regional demands, and transport costs. The linear solver identifies optimal routing. A Monte Carlo module samples demand fluctuations to quantify supply chain resilience under stochastic shocks.',
+            'decisions': 'Selected PuLP for explicit, readable mathematical constraints and Plotly for intuitive visualization of multi-variable trade-off surfaces.',
+            'evaluation': 'Tested stockout scenarios and sensitivity curves across constrained warehouse capacities.',
+            'limitations': 'Simulation-based study using synthetic operational parameters rather than live commercial fleet telemetry.',
+            'lessons': 'Deterministic linear programming must be paired with stochastic sensitivity testing to deliver reliable operational decision guidance.'
+        }
     }
 }
 
-# The 7 additional projects in section 4 (including Tadbir AI and Customer Churn)
+# The 5 additional projects in section 4 (Genuine GitHub repositories only)
 more_projects = [
+    dict(
+        name='FlowDesk AI',
+        cat='software',
+        modal_id='flowdesk-ai',
+        tag='SERVICE MANAGEMENT · ML & OR-TOOLS CP-SAT',
+        repo='flowdesk-ai',
+        stack=['Python', 'FastAPI', 'Scikit-learn', 'Google OR-Tools', 'Next.js', 'TypeScript'],
+        fr=(
+            'Gestion des services & Planification',
+            'Classification automatique et affectation optimale des effectifs.',
+            'Une plateforme ITSM intelligente qui allie classification de tickets par machine learning (TF-IDF + Régression Logistique) et programmation mathématique par contraintes (Google OR-Tools CP-SAT) pour l’affectation d’agents sous contraintes de compétences, disponibilités et SLA.',
+            'Classifieur NLP rapide (<10ms), solveur CP-SAT avec équilibrage de charge et API FastAPI.',
+            'Prototype d’ingénierie évalué sur données d’incidents synthétiques réalistes avec métriques de classification documentées.'
+        ),
+        en=(
+            'Service management & Workforce scheduling',
+            'Automated ticket categorization and optimal staff assignment.',
+            'An intelligent ITSM platform coupling machine learning ticket categorization (TF-IDF + Logistic Regression) with exact constraint programming (Google OR-Tools CP-SAT) for staff scheduling under skills, availability, and SLA targets.',
+            'Sub-10ms NLP classifier, CP-SAT solver with workload balancing, and asynchronous FastAPI backend.',
+            'Engineering prototype evaluated on synthetic incident backlogs with documented classification metrics.'
+        )
+    ),
     dict(
         name='Tadbir AI',
         cat='software',
+        modal_id='tadbir-ai',
         tag='AI & BUSINESS SOFTWARE · INTERNSHIP',
         repo='FAWATIR-ROOT',
         stack=['Python', 'Django REST', 'Next.js', 'TypeScript', 'Gemini'],
@@ -188,7 +314,8 @@ more_projects = [
     dict(
         name='Customer Churn · MLOps',
         cat='ml',
-        tag='MACHINE LEARNING · APIS · EXPERIMENT TRACKING',
+        modal_id='churn-mlops',
+        tag='MACHINE LEARNING · MLOPS · DRIFT MONITORING',
         repo='churn-prediction-mlops',
         stack=['Python', 'Scikit-learn', 'DVC', 'MLflow', 'FastAPI', 'Docker'],
         fr=(
@@ -209,6 +336,7 @@ more_projects = [
     dict(
         name='Pricing Analytics Engine',
         cat='data',
+        modal_id='pricing-engine',
         tag='SQL · ANALYTICS · FORECASTING',
         repo='pricing-analytics-engine',
         stack=['Python', 'DuckDB', 'SQL', 'FastAPI', 'Prophet', 'Chart.js'],
@@ -230,6 +358,7 @@ more_projects = [
     dict(
         name='Supply Chain Optimisation',
         cat='data',
+        modal_id='supply-chain',
         tag='OPERATIONS RESEARCH · SIMULATION',
         repo='supply-chain-optimization-dashboard',
         stack=['Python', 'PuLP', 'Streamlit', 'Plotly'],
@@ -247,74 +376,21 @@ more_projects = [
             'Mathematical optimization using PuLP with Plotly and Streamlit interactive interfaces.',
             'Simulation-based study: scenarios explore constraint boundaries rather than verified commercial savings.'
         )
-    ),
-    dict(
-        name='Traffic Flow Prediction',
-        cat='ml',
-        tag='PREDICTIVE MODELLING · VISUALISATION',
-        repo='Mini_project-TrafficFlowPrediction-',
-        stack=['Python', 'Scikit-learn', 'SVR', 'KNN', 'JavaScript'],
-        fr=(
-            'Modélisation prédictive',
-            'Anticiper les flux de circulation urbains.',
-            'Un projet associant préparation de séries temporelles, ingénierie de variables temporelles, comparaison méthodique de modèles (SVR, KNN, arbres de décision, régression multiple) et tableau de bord de visualisation web.',
-            'Nettoyage de données, métriques d’erreur (MAE, RMSE, R²) et graphiques web.',
-            'Projet académique documenté dans le dépôt GitHub ; évalué sur données historiques sans déploiement urbain réel.'
-        ),
-        en=(
-            'Predictive modelling',
-            'Forecasting urban traffic congestion patterns.',
-            'A traffic-prediction project combining time-series preparation, feature engineering, and systematic benchmarking of SVR, KNN, decision trees, and multiple regression with interactive web charts.',
-            'Data cleaning, metric evaluation (MAE, RMSE, R²) and web visualization.',
-            'Documented academic project evaluated against historical benchmark data; no live municipal deployment is claimed.'
-        )
-    ),
-    dict(
-        name='Computer Vision Gesture Suite',
-        cat='ml',
-        tag='COMPUTER VISION · INTERACTION',
-        repo='hand-detection-program',
-        stack=['OpenCV', 'MediaPipe', 'Python', 'NumPy'],
-        fr=(
-            'Vision par ordinateur',
-            'Transformer le mouvement des mains en interactions naturelles.',
-            'Une suite de démonstrations utilisant un flux webcam standard et le suivi des points de repère anatomiques de la main (MediaPipe) : dessin gestuel dans l’espace (air-writing), manipulation d’éléments et redimensionnement par pincement.',
-            'Traitement temps réel OpenCV, détection 21 points de repère MediaPipe.',
-            'Démonstrations locales temps réel ; la réactivité dépend des conditions d’éclairage et de la résolution caméra.'
-        ),
-        en=(
-            'Computer vision',
-            'Turning hand movements into touchless interactions.',
-            'Webcam-based demonstrations that turn hand movements into natural user interactions using MediaPipe landmark tracking: air writing, gesture-controlled drawing, and pinch-based resizing.',
-            'Real-time OpenCV processing with 21-point MediaPipe hand tracking.',
-            'Local interactive demonstrations; performance depends on camera resolution and lighting conditions.'
-        )
-    ),
-    dict(
-        name='Contact Manager',
-        cat='software',
-        tag='FULL-STACK · AI INTEGRATION',
-        repo='Gestion-des-contacts',
-        stack=['Flask', 'SQLite', 'Jinja2', 'Gemini'],
-        fr=(
-            'Développement full-stack',
-            'Gestion d’annuaire complet avec assistant IA.',
-            'Une application web complète comprenant authentification utilisateur, recherche avancée, gestion de catégories, favoris, agenda, assistant conversationnel Gemini, notifications par e-mail et export CSV.',
-            'Architecture Flask MVC, base relationnelle SQLite, intégration API Gemini.',
-            'Application de démonstration illustrant la maîtrise d’une architecture web complète de bout en bout.'
-        ),
-        en=(
-            'Full-stack development',
-            'Contact management system with integrated AI assistant.',
-            'A complete web platform featuring user authentication, advanced search, categories, favorites, agenda, an integrated Gemini AI assistant, email alerts, and CSV export.',
-            'Flask MVC architecture, SQLite relational schema, Gemini API integration.',
-            'Demonstration application showcasing full-cycle web engineering and third-party API orchestration.'
-        )
-    ),
+    )
 ]
 
 # Section 7: Project Journal Notes matching the featured projects
 journal_notes = [
+    {
+        'id': 'bidpilot-opt',
+        'fr_title': 'Optimisation discrète avec Google OR-Tools CP-SAT et matching NLP',
+        'en_title': 'Discrete optimization with Google OR-Tools CP-SAT and NLP matching',
+        'tag': 'OR-TOOLS CP-SAT & NLP',
+        'date': '2026',
+        'fr_desc': 'Comment modéliser les coûts fixes et seuils MOQ en programmation par contraintes disjonctives tout en réconciliant les devis par similarité vectorielle.',
+        'en_desc': 'Modeling fixed supplier costs and MOQ thresholds in disjunctive constraint programming while reconciling RFQ lines with semantic embeddings.',
+        'link': '#project-case-bidpilot-ai'
+    },
     {
         'id': 'researchos-rag',
         'fr_title': 'RAG & pgvector : sourçage strict et réduction des hallucinations',
@@ -346,13 +422,13 @@ journal_notes = [
         'link': '#project-case-v2c-sentinel'
     },
     {
-        'id': 'tadbir-collaboration',
-        'fr_title': 'Retours d’expérience et collaboration sur Tadbir AI',
-        'en_title': 'Lessons from collaborating on Tadbir AI',
-        'tag': 'LEADERSHIP & ENGINEERING',
+        'id': 'flowdesk-scheduling',
+        'fr_title': 'FlowDesk AI : Coupler classification Scikit-learn et affectation CP-SAT',
+        'en_title': 'FlowDesk AI: Coupling Scikit-learn ML routing with CP-SAT team assignment',
+        'tag': 'ML & CONSTRAINT PROGRAMMING',
         'date': '2026',
-        'fr_desc': 'Coordonner une équipe de stagiaires autour d’un produit SaaS : standardisation des interfaces TypeScript/Django et conception de revues humaines pour l’IA.',
-        'en_desc': 'Leading an intern development team on business SaaS: standardizing TypeScript/Django API contracts and designing human-in-the-loop review interfaces.',
+        'fr_desc': 'Associer la prédiction statistique des catégories de tickets aux contraintes dures de compétences et d’équité de charge hebdomadaire.',
+        'en_desc': 'Bridging statistical ticket categorization with hard operational constraints on technician certifications and weekly workload fairness.',
         'link': '#project-1'
     },
     {
@@ -363,7 +439,7 @@ journal_notes = [
         'date': '2026',
         'fr_desc': 'Pourquoi un notebook ne suffit pas : structurer l’inférence avec FastAPI, gérer la sérialisation des pipelines et surveiller la dérive avec KS et PSI.',
         'en_desc': 'Why a notebook is only the first step: packaging inference endpoints with FastAPI, managing pipeline artifacts, and tracking drift with KS and PSI.',
-        'link': '#project-2'
+        'link': '#project-3'
     }
 ]
 
@@ -383,7 +459,7 @@ def build_full_html():
     ]
     nav_html = ''.join(f'<a href="#{nid}">{bi(fr, en)}</a>' for nid, fr, en in nav_links)
 
-    # 3. Selected Spotlight Case Studies (Tadbir AI, Customer Churn MLOps, V2C-Sentinel)
+    # 3. Selected Spotlight Case Studies (BidPilot AI, ResearchOS, Analyste IA, V2C-Sentinel)
     selected_html = ''
     for key, p in case_studies.items():
         repo_btn = ''
@@ -405,7 +481,7 @@ def build_full_html():
             <p>{bi(p['fr']['overview'], p['en']['overview'])}</p>
             <div class="spotlight-actions">
               <button type="button" class="project-jump-btn open-case-study" data-case="{p['id']}">
-                {bi("Explorer le projet", "Explore the project") if p['id'] == 'tadbir-ai' else bi("Lire l’étude de cas", "Read the case study")}
+                {bi("Lire l’étude de cas", "Read the case study")}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
               </button>
               {repo_btn}
@@ -443,6 +519,15 @@ def build_full_html():
             </a>
             '''
 
+        modal_btn = ''
+        if p.get('modal_id'):
+            modal_btn = f'''
+            <button type="button" class="project-jump-btn open-case-study" data-case="{p['modal_id']}">
+              {bi("Étude de cas", "Case study")}
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+            '''
+
         stack_spans = ''.join(f'<span>{t}</span>' for t in p['stack'])
 
         more_cards.append(f'''
@@ -472,7 +557,10 @@ def build_full_html():
               </div>
             </div>
           </details>
-          {link}
+          <div class="project-actions-row">
+            {modal_btn}
+            {link}
+          </div>
         </article>
         ''')
 
@@ -494,7 +582,7 @@ def build_full_html():
         </article>
         '''
 
-    # Modals for Deep-Dive Structure (Section 11)
+    # Modals for Deep-Dive Structure (All 9 projects)
     modals_html = ''
     for key, p in all_case_studies.items():
         modals_html += f'''
@@ -545,7 +633,7 @@ def build_full_html():
                 
                 <div class="deep-dive-section">
                   <h4>8. {bi("Explorer le projet & Code source (Explore Further)", "Explore Further")}</h4>
-                  <p style="margin-bottom: 12px;">{bi("Accédez au dépôt officiel sur GitHub pour examiner le code source, l’architecture et les instructions d’exécution locale :", "Explore the official GitHub repository for source code, architecture specifications, and local execution guides:")}</p>
+                  <p style="margin-bottom: 12px;">{bi("Accédez au dépôt officiel sur GitHub pour examiner le code source, l’architecture et les instructions d’exécution :", "Explore the official GitHub repository for source code, architecture specifications, and local execution guides:")}</p>
                   <a class="source-btn" href="{GH+p['repo']}" target="_blank" rel="noopener noreferrer" style="display:inline-flex;">
                     <svg width="15" height="15" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                     {bi("Ouvrir le dépôt GitHub", "View GitHub repository")}
@@ -567,8 +655,8 @@ def build_full_html():
   <meta name="description" content="Meryem El Osmani. Applied AI, Data and Software engineering portfolio. Seeking a PFE graduation internship in Morocco (Feb/Mar - Jul 2027).">
   <meta name="theme-color" content="#090d14">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23090d14'/%3E%3Ctext x='7' y='29' font-family='Arial' font-size='27' fill='%2360a5fa'%3EM%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="style.css?v=7">
-  <script src="site.js?v=7" defer></script>
+  <link rel="stylesheet" href="style.css?v=8">
+  <script src="site.js?v=8" defer></script>
 </head>
 <body>
   <div class="ambient-glow"></div>
@@ -606,7 +694,7 @@ def build_full_html():
       <div class="hero-grid">
         <div>
           <div class="hero-meta">
-            <p>{bi("IA APPLIQUÉE · DATA · SOFTWARE", "APPLIED AI. DATA. SOFTWARE.")}</p>
+            <p>{bi("IA APPLIQUÉE · RECHERCHE OPÉRATIONNELLE · SOFTWARE", "APPLIED AI. OPERATIONS RESEARCH. SOFTWARE.")}</p>
             <p>MEKNÈS · MOROCCO</p>
           </div>
           <h1>Meryem El Osmani</h1>
@@ -614,8 +702,8 @@ def build_full_html():
           
           <p class="intro">
             {bi(
-              "Étudiante en Master Intelligence Artificielle et Systèmes de Décision Optimale à Meknès. Je conçois des systèmes d'IA appliqués, des architectures logicielles robustes et des pipelines MLOps de bout en bout. Spécialisée en vision par ordinateur, modélisation prédictive et ingénierie full-stack orientée décision.",
-              "Master's student in Artificial Intelligence and Optimal Decision Systems in Meknès, Morocco. I design applied AI systems, robust software architectures, and end-to-end MLOps pipelines. Specialized in computer vision, predictive modelling, and full-stack engineering."
+              "Étudiante en Master Intelligence Artificielle et Systèmes de Décision Optimale à Meknès. Je conçois des systèmes d'IA appliqués, des architectures logicielles robustes et des modèles d'optimisation mathématique de bout en bout. Spécialisée en recherche opérationnelle (Google OR-Tools CP-SAT), modélisation prédictive, RAG vectoriel et ingénierie logicielle full-stack.",
+              "Master's student in Artificial Intelligence and Optimal Decision Systems in Meknès, Morocco. I design applied AI systems, robust software architectures, and end-to-end mathematical optimization models. Specialized in operations research (Google OR-Tools CP-SAT), predictive modeling, vector RAG, and full-stack software engineering."
             )}
           </p>
           
@@ -630,7 +718,6 @@ def build_full_html():
             </a>
           </div>
 
-          <!-- Buttons requested: Explore my projects / Download my CV / Get in touch -->
           <div class="actions">
             <a class="button primary" href="#selected">
               {bi("Explorer mes projets", "Explore my projects")}
@@ -671,11 +758,11 @@ def build_full_html():
                   </div>
                   <span class="glass-loc">📍 Meknès</span>
                 </div>
-                <p class="glass-sub">{bi("Computer Vision · MLOps · Architecture Logicielle", "Computer Vision · MLOps · Full-Stack Systems")}</p>
+                <p class="glass-sub">{bi("OR-Tools CP-SAT · MLOps & RAG · Architecture Logicielle", "OR-Tools CP-SAT · MLOps & RAG · Full-Stack Systems")}</p>
                 <div class="glass-stats-strip">
                   <div class="glass-stat">
-                    <strong>10</strong>
-                    <span>{bi("Projets", "Projects")}</span>
+                    <strong>9</strong>
+                    <span>{bi("Projets GitHub", "GitHub Projects")}</span>
                   </div>
                   <div class="glass-stat-divider"></div>
                   <div class="glass-stat">
@@ -711,8 +798,8 @@ def build_full_html():
             <h3>{bi("Parcours académique & curiosité", "Academic foundation")}</h3>
             <p>
               {bi(
-                "Ma formation associe génie informatique, systèmes intelligents et recherche opérationnelle. Je m’intéresse à la trajectoire complète qui mène d’un problème à une solution concrète : comprendre la donnée, choisir l’approche, développer l’application et mesurer honnêtement ses limites.",
-                "My background spans computer engineering, intelligent systems and operations research. I’m interested in the complete path from a problem to a working solution: understanding the data, choosing an approach, building the application and evaluating its limitations."
+                "Ma formation associe génie informatique, systèmes intelligents et recherche opérationnelle. Je m’intéresse à la trajectoire complète qui mène d’un problème à une solution concrète : comprendre la donnée, modéliser les contraintes mathématiques, développer l’application et mesurer honnêtement ses limites.",
+                "My background spans computer engineering, intelligent systems and operations research. I’m interested in the complete path from a problem to a working solution: understanding data, formulating mathematical constraints, building software and evaluating limitations."
               )}
             </p>
           </div>
@@ -731,12 +818,11 @@ def build_full_html():
             <h3>{bi("Philosophie & transparence", "Engineering philosophy")}</h3>
             <p>
               {bi(
-                "Mes projets explorent le machine learning, la vision par ordinateur, l’optimisation et la cybersécurité. À travers ce portfolio, je partage ce que je construis, les décisions qui sous-tendent chaque choix et les enseignements tirés en chemin.",
-                "My projects explore machine learning, computer vision, optimisation and cybersecurity. Through this portfolio, I share what I build, the decisions behind it and what I learn along the way."
+                "Mes projets explorent l'optimisation combinatoire (OR-Tools CP-SAT), le machine learning, le RAG vectoriel et la cybersécurité. À travers ce portfolio, je partage ce que je construis, les décisions qui sous-tendent chaque choix et les enseignements tirés en chemin.",
+                "My projects explore combinatorial optimization (OR-Tools CP-SAT), machine learning, vector RAG and cybersecurity. Through this portfolio, I share what I build, the decisions behind it and what I learn along the way."
               )}
             </p>
           </div>
-        </div>
       </div>
     </section>
 
@@ -745,9 +831,9 @@ def build_full_html():
       <div class="heading">
         <div>
           <p class="micro">02 / {bi("PROJETS SÉLECTIONNÉS", "SELECTED PROJECTS")}</p>
-          <h2>{bi("Trois études de cas approfondies.", "Three in-depth case studies.")}</h2>
+          <h2>{bi("Quatre études de cas approfondies.", "Four in-depth case studies.")}</h2>
         </div>
-        <p>{bi("ResearchOS, Analyste IA multi-agents et V2C-Sentinel : explorez les décisions d'architecture et les détails d'implémentation.", "ResearchOS, Multi-Agent AI Analyst and V2C-Sentinel: explore the architectural choices and technical implementations.")}</p>
+        <p>{bi("BidPilot AI, ResearchOS, Analyste IA multi-agents et V2C-Sentinel : explorez les décisions d'architecture et les détails d'implémentation.", "BidPilot AI, ResearchOS, Multi-Agent AI Analyst and V2C-Sentinel: explore the architectural choices and technical implementations.")}</p>
       </div>
       {selected_html}
     </section>
@@ -756,10 +842,20 @@ def build_full_html():
     <section class="section work" id="projects">
       <div class="heading">
         <div>
-          <p class="micro">03 / {bi("AUTRES PROJETS", "MORE PROJECTS")}</p>
-          <h2>{bi("Travaux complémentaires & Démonstrations.", "Additional technical projects.")}</h2>
+          <p class="micro">03 / {bi("AUTRES PROJETS GITHUB", "MORE GITHUB PROJECTS")}</p>
+          <h2>{bi("Cinq projets d'ingénierie & d'optimisation.", "Five engineering & optimization projects.")}</h2>
         </div>
-        <p>{bi("Analytics e-commerce, recherche opérationnelle, modélisation de trafic, vision par ordinateur et applications full-stack.", "E-commerce analytics, operations research, traffic forecasting, computer vision and full-stack tools.")}</p>
+        <p>{bi("FlowDesk AI, Tadbir AI, pipeline MLOps de bout en bout, intelligence de tarification e-commerce et optimisation logistique.", "FlowDesk AI, Tadbir AI, end-to-end MLOps pipeline, e-commerce pricing intelligence and logistics optimization.")}</p>
+      </div>
+
+      <div class="filters-bar">
+        <span class="filter-label">{bi("Filtrer :", "Filter:")}</span>
+        <div class="filters-wrapper">
+          <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">{bi("Tous les projets (5)", "All projects (5)")}</button>
+          <button type="button" class="filter-btn" data-filter="software" aria-pressed="false">{bi("IA & Systèmes", "AI & Systems")}</button>
+          <button type="button" class="filter-btn" data-filter="ml" aria-pressed="false">{bi("ML & MLOps", "ML & MLOps")}</button>
+          <button type="button" class="filter-btn" data-filter="data" aria-pressed="false">{bi("Data & Optimisation", "Data & Optimization")}</button>
+        </div>
       </div>
 
       <div class="projects">
@@ -883,7 +979,7 @@ def build_full_html():
           <p class="micro">05 / {bi("DOMAINES DE COMPÉTENCES", "AREAS OF PRACTICE")}</p>
           <h2>{bi("Expertise & Méthodes de travail.", "Core competencies & toolsets.")}</h2>
         </div>
-        <p>{bi("Quatre piliers techniques reliant analyse, modélisation, mise en production et optimisation.", "Four technical pillars connecting analysis, modeling, software deployment and optimization.")}</p>
+        <p>{bi("Quatre piliers techniques reliant analyse, modélisation, mise en production et optimisation mathématique.", "Four technical pillars connecting analysis, modeling, software deployment and mathematical optimization.")}</p>
       </div>
 
       <div class="expertise-grid">
@@ -891,28 +987,28 @@ def build_full_html():
           <span class="micro">01 / DATA</span>
           <h3>{bi("Analyse de données", "Data analysis")}</h3>
           <p>{bi("Préparer, explorer et structurer des volumes de données pour appuyer des analyses décisionnelles utiles.", "Preparing, exploring and structuring data to support useful analysis.")}</p>
-          <div class="tech-capsule">Python · SQL · Pandas · NumPy · DuckDB · Tableau · Excel · Plotly</div>
+          <div class="tech-capsule">Python · SQL · Pandas · NumPy · DuckDB · Polars · Tableau · Plotly</div>
         </article>
 
         <article class="expertise-card">
           <span class="micro">02 / AI & ML</span>
           <h3>{bi("IA & Machine learning", "AI and machine learning")}</h3>
-          <p>{bi("Comparer méthodiquement les modèles prédictifs, intégrer l’IA générative et explorer des interfaces visuelles.", "Comparing predictive models, integrating generative AI and exploring computer-vision interactions.")}</p>
-          <div class="tech-capsule">Scikit-learn · OpenCV · MediaPipe · Gemini</div>
+          <p>{bi("Comparer méthodiquement les modèles prédictifs, concevoir des architectures RAG et orchestrer des agents autonomes.", "Systematically benchmarking predictive models, engineering vector RAG systems and orchestrating autonomous agents.")}</p>
+          <div class="tech-capsule">Scikit-learn · LangGraph · pgvector · Sentence-Transformers · Gemini API</div>
         </article>
 
         <article class="expertise-card">
           <span class="micro">03 / SOFTWARE & MLOPS</span>
           <h3>{bi("Logiciel & MLOps", "Software and MLOps")}</h3>
           <p>{bi("Relier modèles et données aux applications réelles, avec des APIs rapides, du suivi d'expériences et du code reproductible.", "Connecting models and data to applications, with APIs, experiment tracking and reproducible environments.")}</p>
-          <div class="tech-capsule">Django REST · FastAPI · Flask · Next.js · TypeScript · Git · Docker · DVC · MLflow</div>
+          <div class="tech-capsule">FastAPI · Django REST · Next.js · TypeScript · Docker · DVC · MLflow · Git</div>
         </article>
 
         <article class="expertise-card">
           <span class="micro">04 / OPTIMIZATION</span>
           <h3>{bi("Recherche opérationnelle", "Operations research")}</h3>
-          <p>{bi("Formuler des contraintes mathématiques, explorer l’incertitude et comparer rigoureusement des scénarios de décision.", "Formulating constraints, exploring uncertainty and comparing decision scenarios.")}</p>
-          <div class="tech-capsule">PuLP · Linear programming · Monte Carlo simulation · Sensitivity analysis</div>
+          <p>{bi("Formuler des contraintes mathématiques discrètes et linéaires, modéliser l’incertitude et optimiser les décisions opérationnelles.", "Formulating discrete and linear constraints, modeling uncertainty and optimizing operational decisions.")}</p>
+          <div class="tech-capsule">Google OR-Tools CP-SAT · PuLP · Programmation discrète & linéaire · Monte-Carlo</div>
         </article>
       </div>
     </section>
@@ -976,8 +1072,8 @@ def build_full_html():
             <ul class="cv-points-list">
               <li><strong>{bi("Formation d'élite :", "Education:")}</strong> {bi("Master IA & Systèmes de Décision Optimale (FSM Meknès) + Licence Systèmes Intelligents + DUT Génie Informatique.", "Master's in AI & Optimal Decision Systems (FSM Meknès) + BSc Intelligent Systems + DUT Computer Engineering.")}</li>
               <li><strong>{bi("Expérience professionnelle :", "Professional experience:")}</strong> {bi("Team Leader & Ingénieure IA/Logiciel stagiaire chez Arimas Holdings (Tadbir AI) + Data Analyst freelance (EUMATRIX.eu / Upwork) + Stagiaire EST.", "Team Leader & AI/Software intern at Arimas Holdings (Tadbir AI) + Freelance Data Analyst (EUMATRIX.eu / Upwork) + EST intern.")}</li>
-              <li><strong>{bi("Projets phares sélectionnés :", "Featured projects:")}</strong> ResearchOS (RAG / pgvector), Analyste IA multi-agents (LangGraph), V2C-Sentinel (Cyber-sécurité CAN).</li>
-              <li><strong>{bi("Compétences & Certifications :", "Skills & Certifications:")}</strong> Google Cloud Cybersecurity Certificate, Python, Scikit-learn, LangGraph, Django REST, Next.js, Docker, PuLP.</li>
+              <li><strong>{bi("Projets phares sélectionnés :", "Featured projects:")}</strong> BidPilot AI (OR-Tools CP-SAT), ResearchOS (RAG / pgvector), Analyste IA multi-agents (LangGraph), V2C-Sentinel (Cyber-sécurité CAN), FlowDesk AI.</li>
+              <li><strong>{bi("Compétences & Certifications :", "Skills & Certifications:")}</strong> Google Cloud Cybersecurity Certificate, Google OR-Tools CP-SAT, Python, Scikit-learn, LangGraph, Django REST, Next.js, Docker, PuLP.</li>
             </ul>
           </div>
 
@@ -1022,8 +1118,8 @@ def build_full_html():
       <div class="contact-row">
         <p>
           {bi(
-            "Je recherche un stage de fin d’études (PFE) au Maroc de février / mars à juillet 2027 en IA appliquée, Data Science ou ingénierie logicielle. Si votre équipe recherche quelqu’un qui aime relier l’analyse à la réalisation, je serais ravie d’échanger sur vos projets et sur ma contribution.",
-            "I’m seeking a final-year internship in Morocco in applied AI, data or software engineering. If your team is looking for someone who enjoys connecting analysis with implementation, I’d be happy to discuss your work and how I could contribute."
+            "Je recherche un stage de fin d’études (PFE) au Maroc de février / mars à juillet 2027 en IA appliquée, recherche opérationnelle ou ingénierie logicielle. Si votre équipe recherche quelqu’un qui aime relier l’analyse à la réalisation, je serais ravie d’échanger sur vos projets et sur ma contribution.",
+            "I’m seeking a final-year internship in Morocco in applied AI, operations research or software engineering. If your team is looking for someone who enjoys connecting analysis with implementation, I’d be happy to discuss your work and how I could contribute."
           )}
         </p>
 
@@ -1076,4 +1172,4 @@ if __name__ == '__main__':
     (DIST / 'en.html').write_text(redirect_html, encoding='utf-8')
     (ROOT / 'en.html').write_text(redirect_html, encoding='utf-8')
     
-    print('Generated complete 11-section bilingual portfolio!')
+    print('Generated complete bilingual portfolio featuring ONLY latest GitHub projects!')
