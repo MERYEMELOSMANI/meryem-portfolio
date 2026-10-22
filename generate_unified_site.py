@@ -694,36 +694,61 @@ def build_full_html():
         <p>{bi("Comprendre la donnée, choisir l'approche technique, construire le logiciel et évaluer ses limites.", "Understanding the data, choosing an approach, building the application and evaluating its limitations.")}</p>
       </div>
 
-      <div class="about-grid">
-        <div class="about-card">
-          <span class="about-icon">🔬</span>
-          <h3>{bi("Parcours académique & curiosité", "Academic foundation")}</h3>
-          <p>
-            {bi(
-              "Ma formation associe génie informatique, systèmes intelligents et recherche opérationnelle. Je m’intéresse à la trajectoire complète qui mène d’un problème à une solution concrète : comprendre la donnée, choisir l’approche, développer l’application et mesurer honnêtement ses limites.",
-              "My background spans computer engineering, intelligent systems and operations research. I’m interested in the complete path from a problem to a working solution: understanding the data, choosing an approach, building the application and evaluating its limitations."
-            )}
-          </p>
+      <div class="about-layout">
+        <div class="about-portrait-card">
+          <div class="about-portrait-frame">
+            <img src="meryem-portrait.jpg" alt="Meryem El Osmani - Ingénieure IA & Logiciel" class="about-portrait-img">
+            <div class="about-portrait-glow"></div>
+            <div class="about-portrait-badge">
+              <span class="status-dot"></span>
+              <span>{bi("Disponible · PFE 2027", "Available · PFE 2027")}</span>
+            </div>
+          </div>
+          <div class="about-portrait-info">
+            <div class="portrait-name-row">
+              <h3>Meryem El Osmani</h3>
+              <span class="portrait-check">✓</span>
+            </div>
+            <p class="about-role">{bi("Ingénieure IA & Logiciel · Team Leader", "AI & Software Engineer · Team Leader")}</p>
+            <div class="about-tags">
+              <span>📍 Meknès, Maroc</span>
+              <span>🎓 Master IA</span>
+              <span>⚡ Full-Stack & MLOps</span>
+            </div>
+          </div>
         </div>
-        <div class="about-card">
-          <span class="about-icon">⚡</span>
-          <h3>{bi("Expérience pratique & équipe", "Practical impact")}</h3>
-          <p>
-            {bi(
-              "Lors de mon stage chez Arimas Holdings, j’ai exercé comme team leader et ingénieure IA/logiciel sur Tadbir AI. Mon activité freelance m’a également appris à nettoyer, structurer et automatiser des flux de données répondant à de réels besoins métier.",
-              "During my internship at Arimas Holdings, I worked as a team leader and AI/software engineering intern on Tadbir AI. My freelance work has also given me experience preparing and structuring data for practical business needs."
-            )}
-          </p>
-        </div>
-        <div class="about-card">
-          <span class="about-icon">💡</span>
-          <h3>{bi("Philosophie & transparence", "Engineering philosophy")}</h3>
-          <p>
-            {bi(
-              "Mes projets explorent le machine learning, la vision par ordinateur, l’optimisation et la cybersécurité. À travers ce portfolio, je partage ce que je construis, les décisions qui sous-tendent chaque choix et les enseignements tirés en chemin.",
-              "My projects explore machine learning, computer vision, optimisation and cybersecurity. Through this portfolio, I share what I build, the decisions behind it and what I learn along the way."
-            )}
-          </p>
+
+        <div class="about-grid">
+          <div class="about-card">
+            <span class="about-icon">🔬</span>
+            <h3>{bi("Parcours académique & curiosité", "Academic foundation")}</h3>
+            <p>
+              {bi(
+                "Ma formation associe génie informatique, systèmes intelligents et recherche opérationnelle. Je m’intéresse à la trajectoire complète qui mène d’un problème à une solution concrète : comprendre la donnée, choisir l’approche, développer l’application et mesurer honnêtement ses limites.",
+                "My background spans computer engineering, intelligent systems and operations research. I’m interested in the complete path from a problem to a working solution: understanding the data, choosing an approach, building the application and evaluating its limitations."
+              )}
+            </p>
+          </div>
+          <div class="about-card">
+            <span class="about-icon">⚡</span>
+            <h3>{bi("Expérience pratique & équipe", "Practical impact")}</h3>
+            <p>
+              {bi(
+                "Lors de mon stage chez Arimas Holdings, j’ai exercé comme team leader et ingénieure IA/logiciel sur Tadbir AI. Mon activité freelance m’a également appris à nettoyer, structurer et automatiser des flux de données répondant à de réels besoins métier.",
+                "During my internship at Arimas Holdings, I worked as a team leader and AI/software engineering intern on Tadbir AI. My freelance work has also given me experience preparing and structuring data for practical business needs."
+              )}
+            </p>
+          </div>
+          <div class="about-card">
+            <span class="about-icon">💡</span>
+            <h3>{bi("Philosophie & transparence", "Engineering philosophy")}</h3>
+            <p>
+              {bi(
+                "Mes projets explorent le machine learning, la vision par ordinateur, l’optimisation et la cybersécurité. À travers ce portfolio, je partage ce que je construis, les décisions qui sous-tendent chaque choix et les enseignements tirés en chemin.",
+                "My projects explore machine learning, computer vision, optimisation and cybersecurity. Through this portfolio, I share what I build, the decisions behind it and what I learn along the way."
+              )}
+            </p>
+          </div>
         </div>
       </div>
     </section>
