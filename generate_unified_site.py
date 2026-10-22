@@ -610,12 +610,12 @@ def build_full_html():
             <p>MEKNÈS · MOROCCO</p>
           </div>
           <h1>Meryem El Osmani</h1>
-          <p class="hero-tagline">{bi("L'intelligence artificielle appliquée, la donnée et le logiciel.", "Applied AI. Data. Software.")}</p>
+          <p class="hero-tagline">{bi("Ingénieure en Intelligence Artificielle & Développement Logiciel", "Artificial Intelligence & Software Engineer")}</p>
           
           <p class="intro">
             {bi(
-              "Étudiante en Master Intelligence Artificielle et Systèmes de Décision Optimale, basée à Meknès au Maroc. Je conçois des applications, explore des modèles d’apprentissage automatique et transforme les données en analyses utiles. Mon parcours associe ingénierie logicielle et IA chez Arimas Holdings, team leadership en stage, et missions freelance d’analyse de données en Python et SQL.",
-              "I’m a master’s student in Artificial Intelligence and Optimal Decision Systems, based in Meknès, Morocco. I build applications, explore machine-learning models and turn data into useful analysis. My experience includes AI and software engineering at Arimas Holdings, team leadership during my internship, and freelance data analysis with Python and SQL."
+              "Étudiante en Master Intelligence Artificielle et Systèmes de Décision Optimale à Meknès. Je conçois des systèmes d'IA appliqués, des architectures logicielles robustes et des pipelines MLOps de bout en bout. Spécialisée en vision par ordinateur, modélisation prédictive et ingénierie full-stack orientée décision.",
+              "Master's student in Artificial Intelligence and Optimal Decision Systems in Meknès, Morocco. I design applied AI systems, robust software architectures, and end-to-end MLOps pipelines. Specialized in computer vision, predictive modelling, and full-stack engineering."
             )}
           </p>
           
@@ -652,18 +652,18 @@ def build_full_html():
             <div class="card-top">
               <div class="avatar-container">
                 <img src="meryem.jpg" alt="Meryem El Osmani" class="avatar-img">
-                <span class="avatar-badge" title="AI & Software Engineer">✓</span>
+                <span class="avatar-badge" title="Verified Engineer">✓</span>
               </div>
               <div class="card-title">
                 <h3>Meryem El Osmani</h3>
-                <p class="location">📍 Meknès, Morocco</p>
-                <p class="domain-tag">meryemelosmani.site</p>
+                <p class="location">{bi("📍 Meknès, Maroc", "📍 Meknès, Morocco")}</p>
+                <a href="https://meryemelosmani.site" class="domain-tag" target="_blank" rel="noopener noreferrer">🌐 meryemelosmani.site</a>
               </div>
             </div>
             <div class="card-meta">
-              <strong>{bi("TEAM LEADER & INGÉNIEURE IA / LOGICIEL", "TEAM LEADER & AI / SOFTWARE INTERN")}</strong>
-              <p>Arimas Holdings · Tadbir AI</p>
-              <p>Master IA & Systèmes de Décision Optimale</p>
+              <strong>{bi("INGÉNIEURE IA & LOGICIEL", "AI & SOFTWARE ENGINEER")}</strong>
+              <p class="meta-specialty">{bi("Intelligence Artificielle · Computer Vision · MLOps", "Applied AI · Computer Vision · MLOps")}</p>
+              <p class="meta-degree">{bi("Master IA & Systèmes de Décision Optimale · FSM", "Master's in AI & Optimal Decision Systems · FSM")}</p>
             </div>
             <div class="card-stats">
               <div class="stat-box">
@@ -709,11 +709,11 @@ def build_full_html():
               <h3>Meryem El Osmani</h3>
               <span class="portrait-check">✓</span>
             </div>
-            <p class="about-role">{bi("Ingénieure IA & Logiciel · Team Leader", "AI & Software Engineer · Team Leader")}</p>
+            <p class="about-role">{bi("Ingénieure en Intelligence Artificielle & Logiciel", "Artificial Intelligence & Software Engineer")}</p>
             <div class="about-tags">
-              <span>📍 Meknès, Maroc</span>
-              <span>🎓 Master IA</span>
-              <span>⚡ Full-Stack & MLOps</span>
+              <span>{bi("📍 Meknès, Maroc", "📍 Meknès, Morocco")}</span>
+              <span>{bi("🎓 Master IA & Décision", "🎓 Master in AI & Decisions")}</span>
+              <span>⚡ Computer Vision & MLOps</span>
             </div>
           </div>
         </div>
