@@ -646,40 +646,43 @@ def build_full_html():
           </div>
         </div>
 
-        <!-- 3D Identity Card -->
-        <div class="identity-card-wrap">
-          <aside class="identity-card">
-            <div class="card-top">
-              <div class="avatar-container">
-                <img src="meryem.jpg" alt="Meryem El Osmani" class="avatar-img">
-                <span class="avatar-badge" title="Verified Engineer">✓</span>
+        <!-- Hero Executive Portrait Showcase (Only 1 prominent photo) -->
+        <div class="hero-portrait-wrap">
+          <div class="hero-portrait-card">
+            <div class="hero-portrait-image-box">
+              <img src="meryem-portrait.jpg" alt="Meryem El Osmani — Ingénieure IA & Logiciel" class="hero-portrait-img">
+              <div class="hero-portrait-overlay"></div>
+              
+              <div class="hero-portrait-top-badge">
+                <span class="status-pulse-dot"></span>
+                <span>{bi("Stage PFE 2027 · Disponible", "PFE Internship 2027 · Available")}</span>
               </div>
-              <div class="card-title">
-                <h3>Meryem El Osmani</h3>
-                <p class="location">{bi("📍 Meknès, Maroc", "📍 Meknès, Morocco")}</p>
-                <a href="https://meryemelosmani.site" class="domain-tag" target="_blank" rel="noopener noreferrer">🌐 meryemelosmani.site</a>
+
+              <div class="hero-portrait-glass-bar">
+                <div class="glass-bar-headline">
+                  <span class="glass-title">{bi("INGÉNIEURE IA & LOGICIEL", "AI & SOFTWARE ENGINEER")}</span>
+                  <span class="glass-loc">📍 Meknès, Maroc</span>
+                </div>
+                <p class="glass-sub">{bi("Intelligence Artificielle · Computer Vision · MLOps", "Artificial Intelligence · Computer Vision · MLOps")}</p>
+                <div class="glass-stats-strip">
+                  <div class="glass-stat">
+                    <strong>10</strong>
+                    <span>{bi("Projets", "Projects")}</span>
+                  </div>
+                  <div class="glass-stat-divider"></div>
+                  <div class="glass-stat">
+                    <strong>PFE 2027</strong>
+                    <span>{bi("Disponibilité", "Availability")}</span>
+                  </div>
+                  <div class="glass-stat-divider"></div>
+                  <div class="glass-stat">
+                    <strong>C1 / B2</strong>
+                    <span>{bi("Bilingue", "Bilingual")}</span>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="card-meta">
-              <strong>{bi("INGÉNIEURE IA & LOGICIEL", "AI & SOFTWARE ENGINEER")}</strong>
-              <p class="meta-specialty">{bi("Intelligence Artificielle · Computer Vision · MLOps", "Applied AI · Computer Vision · MLOps")}</p>
-              <p class="meta-degree">{bi("Master IA & Systèmes de Décision Optimale · FSM", "Master's in AI & Optimal Decision Systems · FSM")}</p>
-            </div>
-            <div class="card-stats">
-              <div class="stat-box">
-                <span class="stat-num">10</span>
-                <span class="stat-label">{bi("Projets", "Projects")}</span>
-              </div>
-              <div class="stat-box">
-                <span class="stat-num">PFE 2027</span>
-                <span class="stat-label">{bi("Disponibilité", "Availability")}</span>
-              </div>
-              <div class="stat-box">
-                <span class="stat-num">C1 / B2</span>
-                <span class="stat-label">{bi("Bilingue", "Bilingual")}</span>
-              </div>
-            </div>
-          </aside>
+          </div>
         </div>
       </div>
     </section>
@@ -694,31 +697,7 @@ def build_full_html():
         <p>{bi("Comprendre la donnée, choisir l'approche technique, construire le logiciel et évaluer ses limites.", "Understanding the data, choosing an approach, building the application and evaluating its limitations.")}</p>
       </div>
 
-      <div class="about-layout">
-        <div class="about-portrait-card">
-          <div class="about-portrait-frame">
-            <img src="meryem-portrait.jpg" alt="Meryem El Osmani - Ingénieure IA & Logiciel" class="about-portrait-img">
-            <div class="about-portrait-glow"></div>
-            <div class="about-portrait-badge">
-              <span class="status-dot"></span>
-              <span>{bi("Disponible · PFE 2027", "Available · PFE 2027")}</span>
-            </div>
-          </div>
-          <div class="about-portrait-info">
-            <div class="portrait-name-row">
-              <h3>Meryem El Osmani</h3>
-              <span class="portrait-check">✓</span>
-            </div>
-            <p class="about-role">{bi("Ingénieure en Intelligence Artificielle & Logiciel", "Artificial Intelligence & Software Engineer")}</p>
-            <div class="about-tags">
-              <span>{bi("📍 Meknès, Maroc", "📍 Meknès, Morocco")}</span>
-              <span>{bi("🎓 Master IA & Décision", "🎓 Master in AI & Decisions")}</span>
-              <span>⚡ Computer Vision & MLOps</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="about-grid">
+      <div class="about-grid">
           <div class="about-card">
             <span class="about-icon">🔬</span>
             <h3>{bi("Parcours académique & curiosité", "Academic foundation")}</h3>
