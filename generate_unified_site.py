@@ -655,8 +655,8 @@ def build_full_html():
   <meta name="description" content="Meryem El Osmani. Applied AI, Data and Software engineering portfolio. Seeking a PFE graduation internship in Morocco (Feb/Mar - Jul 2027).">
   <meta name="theme-color" content="#090d14">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23090d14'/%3E%3Ctext x='7' y='29' font-family='Arial' font-size='27' fill='%2360a5fa'%3EM%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="style.css?v=8">
-  <script src="site.js?v=8" defer></script>
+  <link rel="stylesheet" href="style.css?v=9">
+  <script src="site.js?v=9" defer></script>
 </head>
 <body>
   <div class="ambient-glow"></div>
